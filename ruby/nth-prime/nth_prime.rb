@@ -1,18 +1,37 @@
 class Prime
   def self.nth(number)
     raise ArgumentError if number == 0
-    primes = []
-    counter = 2
 
-    while primes.length != number
-      if (2..counter).find { |n| counter % n == 0 }
-        primes << counter
+    candidate = 0
+    primes = []
+    while primes.length < number
+      if candidate.prime?
+        primes << candidate
       end
-      counter += 1
+
+      candidate += 1
     end
 
-    puts "primes: #{primes}"
     primes.last
+  end
+end
+
+class Integer
+  def prime?
+    if self <= 1
+      return false
+    end
+
+    index = 2
+    while index < self
+      if self % index == 0
+        return false
+      end
+
+      index += 1
+    end
+
+    true
   end
 end
 

@@ -4,12 +4,12 @@ require_relative 'nth_prime'
 # Common test data version: 1.0.0 016d65b
 class NthPrimeTest < Minitest::Test
   def test_first_prime
-    skip
+    # skip
     assert_equal 2, Prime.nth(1)
   end
 
   def test_second_prime
-    skip
+    # skip
     assert_equal 3, Prime.nth(2)
   end
 
@@ -19,7 +19,7 @@ class NthPrimeTest < Minitest::Test
   end
 
   def test_big_prime
-    skip
+    # skip
     assert_equal 104743, Prime.nth(10001)
   end
 
